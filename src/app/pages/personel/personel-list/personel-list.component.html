@@ -1,0 +1,23 @@
+@if(list){
+<dx-data-grid id="gridContainer" [dataSource]="list" (onCellClick)="setForm($event.data)" keyExpr="id"
+    [allowColumnReordering]="true" [allowColumnResizing]="true" [columnAutoWidth]="true" [showBorders]="true">
+    <dxo-column-chooser [enabled]="true"></dxo-column-chooser>
+    <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+
+    <dxi-column caption="Employee" [width]="230" [fixed]="true" [calculateCellValue]="calculateCellValue"></dxi-column>
+    <dxi-column dataField="unvanAd" dataType="text"></dxi-column>
+    <dxi-column dataField="dogumTarihi" dataType="date"></dxi-column>
+    <dxi-column dataField="cinsiyet" dataType="text"></dxi-column>
+    <dxi-column type="buttons">
+        <!-- <button name="edit" (click)="setForm(row)"></button> -->
+    </dxi-column>
+</dx-data-grid>
+}
+
+
+<dx-popup [(visible)]="isPersonelKart" [hideOnOutsideClick]="true">
+    @if (selecetedValue) {
+        <app-personel-kart [personel]="selecetedValue"></app-personel-kart>
+
+    }
+</dx-popup>

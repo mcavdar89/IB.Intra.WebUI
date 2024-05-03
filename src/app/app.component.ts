@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  loading: number = 0;
+
   title = 'IB.Intra.WebUI';
+  helloWorld() {
+    alert('Hello world!');
+  }
+
+
 }
