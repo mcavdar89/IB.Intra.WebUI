@@ -14,6 +14,7 @@ export class PersonelService {
 
 
   getPersonelList(): Observable<PersonelDto[]>{
+
     return this.http.get<PersonelDto[]>("http://localhost:5200/api/Personel/list");
   }
 

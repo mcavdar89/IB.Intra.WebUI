@@ -1,4 +1,4 @@
-<div *ngIf="loading>0" style="
+<div *ngIf="(loader.isLoading$ | async)" style="
     width: 100% !important;
     height: 100vh !important;
     position: absolute;
@@ -27,7 +27,8 @@
         <svg class="bi me-2" width="40" height="32">
           <use xlink:href="#bootstrap"></use>
         </svg>
-        <span class="fs-4">PBS</span>
+
+        <span class="fs-4">PBS {{loadingSayac}} </span>
       </a>
       <hr>
       <ul class="nav nav-pills flex-column mb-auto">
